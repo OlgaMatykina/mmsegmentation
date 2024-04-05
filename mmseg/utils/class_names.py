@@ -160,6 +160,35 @@ def mapillary_v1_classes():
     ]
 
 
+def nkb_robosegment_small_classes():
+    return [
+        'unlabelled',
+        'firehose',
+        'hose',
+        'waste',
+        'puddle',
+        'breakroad',
+        'sidewalk',
+        'terrain',
+        'vegetation',
+        'road'
+    ]
+
+def nkb_robosegment_small_palette():
+    return [
+        [255,255,255], #'unlabelled' : none
+        [255,0,0], #'firehose' : red
+        [255,165,0], #'hose' : orange
+        [0,0,255], #'waste' : blue
+        [255,255,0], #'puddle' : yellow
+        [0,255,255], #'breakroad' : aqua
+        [255,0,255], #'sidewalk' : magenta
+        [0,128,0], #'terrain': green
+        [127,72,41], #'vegetation': brown
+        [250,128,114]
+    ]
+
+
 def mapillary_v1_palette():
     """mapillary_v1_ palette for external use."""
     return [[165, 42, 42], [0, 192, 0], [196, 196, 196], [190, 153, 153],
@@ -510,7 +539,8 @@ dataset_aliases = {
     'hsidrive': [
         'hsidrive', 'HSIDrive', 'HSI-Drive', 'hsidrive20', 'HSIDrive20',
         'HSI-Drive20'
-    ]
+    ],
+    'nkb_robosegment_small' : ['nkb_robosegment_small', 'valid']
 }
 
 

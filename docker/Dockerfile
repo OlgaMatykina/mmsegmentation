@@ -33,3 +33,5 @@ WORKDIR /mmsegmentation
 ENV FORCE_CUDA="1"
 RUN pip install -r requirements.txt
 RUN pip install --no-cache-dir -e .
+
+RUN pip install "mmdet>=3.0.0rc4" #for Mask2Former
