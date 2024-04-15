@@ -1,4 +1,11 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+
+'''
+python3 tools/train.py configs/san/san-vit-b16_nkb_robosegment164k-640x640.py --work-dir ../data/san_outputs
+
+'''
+
+
 import argparse
 import logging
 import os
