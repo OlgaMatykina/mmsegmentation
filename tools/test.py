@@ -1,4 +1,9 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+
+'''
+python3 tools/test.py configs/san/san-vit-b16_nkb_robosegment164k-640x640.py ./san_outputs/best_mIoU_epoch_0.pth --work-dir ./san_outputs --show
+'''
+
 import argparse
 import os
 import os.path as osp

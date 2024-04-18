@@ -25,7 +25,7 @@ test_pipeline = [
 ]
 
 # By default, models are trained on 4 GPUs with 8 images per GPU
-train_dataloader = dict(batch_size=8, dataset=dict(pipeline=train_pipeline))
+train_dataloader = dict(batch_size=2, dataset=dict(pipeline=train_pipeline))
 val_dataloader = dict(batch_size=1, dataset=dict(pipeline=test_pipeline))
 test_dataloader = val_dataloader
 
@@ -37,20 +37,22 @@ data_preprocessor = dict(
     test_cfg=dict(size_divisor=32))
 model = dict(
     pretrained=pretrained,
-    text_encoder=dict(dataset_name='coco-stuff164k'),
-    decode_head=dict(num_classes=171))
+    # text_encoder=dict(dataset_name='coco-stuff164k'),
+    text_encoder=dict(dataset_name='nkb_robosegment_small'),
+    decode_head=dict(num_classes=10))
 
 # training schedule for 60k
 train_cfg = dict(
     type='IterBasedTrainLoop',
     max_iters=60000,
-    val_interval=500,
-    val_begin=55000)
+    val_interval=1000,
+    # val_begin=55000
+    )
 default_hooks = dict(
     checkpoint=dict(
         type='CheckpointHook',
-        by_epoch=False,
-        interval=10000,
+        by_epoch=True,
+        interval=1000,
         save_best='mIoU'))
 
 # AdamW optimizer, no weight decay for position embedding & layer norm

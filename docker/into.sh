@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker exec -it mmseg \
+docker exec -it mmseg_matykina \
     /bin/bash -c "/bin/bash"
